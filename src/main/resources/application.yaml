@@ -9,3 +9,14 @@ spring:
         max-active: 8
         max-idle: 8
         min-idle: 0
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    root: info
+  file:
+    name: log/dev_app.log
