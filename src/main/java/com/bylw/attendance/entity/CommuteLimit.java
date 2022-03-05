@@ -1,5 +1,7 @@
 package com.bylw.attendance.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -26,12 +28,6 @@ public class CommuteLimit implements Serializable {
 
     private String tId;
 
-    private Integer isDeleted;
-
-    private Date gmtModified;
-
-    private Date gmtCreate;
-
     @ApiModelProperty("设置范围人员id")
     private String uId;
 
@@ -46,5 +42,18 @@ public class CommuteLimit implements Serializable {
 
     @ApiModelProperty("下经度")
     private Integer downLongitude;
+
+
+
+    @ApiModelProperty("是否删除")
+    private Integer isDeleted;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @ApiModelProperty("修改时间")
+    private Date gmtModified;
+
+    @TableField(fill = FieldFill.INSERT)
+    @ApiModelProperty("创建时间")
+    private Date gmtCreate;
 
 }

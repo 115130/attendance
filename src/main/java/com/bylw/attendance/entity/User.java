@@ -1,5 +1,7 @@
 package com.bylw.attendance.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -26,16 +28,10 @@ public class User implements Serializable {
 
     private String tId;
 
-    private Integer isDeleted;
-
-    private Date gmtModified;
-
-    private Date gmtCreate;
-
     @ApiModelProperty("昵称")
     private String nick;
 
-    @ApiModelProperty("邮箱")
+    @ApiModelProperty("邮箱(用户名)")
     private String email;
 
     @ApiModelProperty("密码")
@@ -43,5 +39,18 @@ public class User implements Serializable {
 
     @ApiModelProperty("身份表示(权限)")
     private String authority;
+
+
+
+    @ApiModelProperty("是否删除")
+    private Integer isDeleted;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @ApiModelProperty("修改时间")
+    private Date gmtModified;
+
+    @TableField(fill = FieldFill.INSERT)
+    @ApiModelProperty("创建时间")
+    private Date gmtCreate;
 
 }
