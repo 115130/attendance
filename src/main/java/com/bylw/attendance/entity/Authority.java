@@ -37,6 +37,6 @@ public class Authority implements Serializable {
     private Date gmtCreate;
 
     @ApiModelProperty("权限管理等级（1,是否可以设置打卡范围）（2,外勤审判）（3,用户管理）")
-    private Integer permissionType;
+    private String permissionType;
 
 }
