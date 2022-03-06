@@ -2,6 +2,7 @@ package com.bylw.attendance.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -26,6 +27,7 @@ public class Authority implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId
     private String tId;
 
     @ApiModelProperty("权限管理等级（1,是否可以设置打卡范围）（2,外勤审判）（3,用户管理）")

@@ -2,8 +2,8 @@ server:
   port: 8080
 spring:
   redis:
-    host: 175.178.116.245
-    port: 8120
+    host: 127.0.0.1
+    port: 6379
     lettuce:
       pool:
         max-active: 8
@@ -13,7 +13,10 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://175.178.116.245:3306/attendance
+    url: jdbc:mysql://localhost:3306/attendance
+  devtools:
+    restart:
+      enabled: true
 mybatis-plus:
   global-config:
     db-config:
@@ -21,10 +24,11 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 sa-token:
-  token-name: cookie
+  token-name: token
   timeout: 2592000
   token-style: uuid
   is-log: true
+  jwt-secret-key: fdsahohgfniojsvmcxzrt
 logging:
   level:
     root: info

@@ -2,6 +2,7 @@ package com.bylw.attendance.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -26,6 +27,7 @@ public class CommuteRecord implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId
     private String tId;
 
     @ApiModelProperty("经纬")

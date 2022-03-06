@@ -12,5 +12,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2021-12-20
  */
 public interface UserMapper extends BaseMapper<User> {
-
+//    @Select("select * from t_user where email=#{email} and u_password=#{password}")
+//    User getUser(LoginVo loginVo);
 }

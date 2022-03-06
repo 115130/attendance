@@ -1,6 +1,7 @@
 package com.bylw.attendance.handle.exceptionhandler;
 
 
+import cn.dev33.satoken.exception.NotLoginException;
 import com.bylw.attendance.utils.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -28,6 +29,14 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         log.error(e.getMsg());
         return Response.error().code(e.getCode()).message(e.getMsg());
+    }
+
+    @ExceptionHandler(NotLoginException.class)
+    @ResponseBody
+    public Response notLogin(NotLoginException e){
+        e.printStackTrace();
+        log.error(e.getMessage());
+        return Response.error().message("没有登陆，请登陆后再试");
     }
 
 }
