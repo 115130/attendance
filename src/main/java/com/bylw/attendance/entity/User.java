@@ -40,11 +40,13 @@ public class User implements Serializable {
     private String uPassword;
 
     @ApiModelProperty("身份表示(权限)")
+    @TableField(fill = FieldFill.INSERT)
     private String authority;
 
 
 
     @ApiModelProperty("是否删除")
+    @TableField(fill = FieldFill.INSERT)
     private Integer isDeleted;
 
     @TableField(fill = FieldFill.INSERT_UPDATE)

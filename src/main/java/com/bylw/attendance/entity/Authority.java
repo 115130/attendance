@@ -14,7 +14,7 @@ import lombok.Data;
 
 /**
  * <p>
- * 
+ * 权限
  * </p>
  *
  * @author yangjiahui
@@ -30,7 +30,7 @@ public class Authority implements Serializable {
     @TableId
     private String tId;
 
-    @ApiModelProperty("权限管理等级（1,是否可以设置打卡范围）（2,外勤审判）（3,用户管理）")
+    @ApiModelProperty("权限管理等级（00,普通用户、修改个人信息）（01,查看他人信息,修改其他人个人信息）（10,打卡）（20,修改权限）")
     private String permissionType;
 
 

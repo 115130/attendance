@@ -28,7 +28,6 @@ public class LoginServiceImpl extends ServiceImpl<UserMapper, User>  implements 
         QueryWrapper<User> loginWrapper =  new QueryWrapper<>();
         loginWrapper.eq("email",username);
         loginWrapper.eq("u_password",password);
-        log.error(userService+"");
         User one = userService.getOne(loginWrapper);
         if(one==null){
             throw new TestException(20002,"登陆失败");
@@ -37,3 +36,4 @@ public class LoginServiceImpl extends ServiceImpl<UserMapper, User>  implements 
         StpUtil.login(one.getTId());
     }
 }
+

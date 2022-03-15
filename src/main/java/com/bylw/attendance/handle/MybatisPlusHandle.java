@@ -17,6 +17,7 @@ public class MybatisPlusHandle implements MetaObjectHandler {
         this.strictInsertFill(metaObject, "gmtModified", Date::new, Date.class);
         this.strictInsertFill(metaObject, "gmtCreate", Date::new, Date.class);
         this.fillStrategy(metaObject,"isDeleted",0);
+        this.fillStrategy(metaObject,"authority","00");
     }
 
 

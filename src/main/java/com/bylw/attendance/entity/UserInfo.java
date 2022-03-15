@@ -53,6 +53,7 @@ public class UserInfo implements Serializable {
     private Date gmtCreate;
 
     @ApiModelProperty("是否删除")
+    @TableField(fill = FieldFill.INSERT)
     private Integer isDeleted;
 
 }

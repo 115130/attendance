@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @author yangjiahui
  * @since 2021-12-20
  */
-@Service
 public interface IUserService extends IService<User> {
-
+    void addUser(User user);
+    void removeUser(String id);
 }

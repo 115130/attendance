@@ -45,6 +45,9 @@ public class CommuteLimit implements Serializable {
     @ApiModelProperty("下经度")
     private Integer downLongitude;
 
+    @ApiModelProperty("当前签到范围是否激活")
+    private String status;
+
 
 
     @ApiModelProperty("是否删除")
