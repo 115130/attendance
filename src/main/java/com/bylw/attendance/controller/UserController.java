@@ -2,6 +2,7 @@ package com.bylw.attendance.controller;
 
 
 import com.bylw.attendance.entity.vo.PermissionVo;
+import com.bylw.attendance.entity.vo.UserPermissionVo;
 import com.bylw.attendance.service.IUserService;
 import com.bylw.attendance.utils.Response;
 import org.apache.ibatis.annotations.Delete;
@@ -44,7 +45,7 @@ public class UserController {
     }
 
     //TODO 更新用户所需要的权限
-    public Response updatePermission(String permissionVo){
+    public Response updatePermission(@RequestBody UserPermissionVo permissionVo){
         userService.updatePermission(permissionVo);
         return Response.ok();
     }

@@ -3,6 +3,7 @@ package com.bylw.attendance.service;
 import com.bylw.attendance.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.bylw.attendance.entity.vo.PermissionVo;
+import com.bylw.attendance.entity.vo.UserPermissionVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,5 +22,5 @@ public interface IUserService extends IService<User> {
 
     List<PermissionVo> getPermissionByUserID(String id);
 
-    void updatePermission(String role);
+    void updatePermission(UserPermissionVo role);
 }

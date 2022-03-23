@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class UserPermissionVo {
-    private String id;
-    private String permission;
+    private String tId;
+    private String authority;
 }

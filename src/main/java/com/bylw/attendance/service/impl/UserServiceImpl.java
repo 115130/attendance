@@ -3,11 +3,13 @@ package com.bylw.attendance.service.impl;
 import com.bylw.attendance.entity.User;
 import com.bylw.attendance.entity.UserInfo;
 import com.bylw.attendance.entity.vo.PermissionVo;
+import com.bylw.attendance.entity.vo.UserPermissionVo;
 import com.bylw.attendance.mapper.UserInfoMapper;
 import com.bylw.attendance.mapper.UserMapper;
 import com.bylw.attendance.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bylw.attendance.utils.RoleCode;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -72,7 +74,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
-    public void updatePermission(String roles) {
-
+    public void updatePermission(UserPermissionVo roles) {
+        User user = new User();
+        BeanUtils.copyProperties(roles,user);
+        updateById(user);
     }
 }
